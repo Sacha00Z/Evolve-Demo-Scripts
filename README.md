@@ -79,6 +79,20 @@ This file has the following structure:
 - **app**: Do not edit, unless cloud application specs change.
 - **var**: Do not edit, these values get updated by scripts.
 
+## Scripts
+
+The repository contains the following scripts:
+
+### `Call-HealthCheck.ps1`
+
+Calls the Health Check API for Generate Batch, and displays results.
+
+### `Call-CreateWorkingFolder.ps1`
+
+Creates a Working Folder in Azure Blob Storage, and registers it with the Generate Application. Demo folders that are created with this script will be retained for 1 day before being purged (Demonstrating Data Retention Principals).
+
+When this script executes the http request, it saves the name of the working folder to the settings file, so that subsequent scripts can *use* the folder for file storage.
+
 ## History
 
 See [CHANGELOG.md](https://github.com/Sacha00Z/Evolve-Demo-Scripts/blob/master/CHANGELOG.md)
