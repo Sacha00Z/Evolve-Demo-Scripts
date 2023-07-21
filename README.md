@@ -112,4 +112,4 @@ Sacha Trube - [@Sacha00Z](https://twitter.com/Sacha00Z)
 
 Project Link: [https://github.com/Sacha00Z/Evolve-Demo-Scripts](https://github.com/Sacha00Z/Evolve-Demo-Scripts)
 
-Thanks to Robert Tucker - @robertwtucker for providing the outline of this README file. Aspiring to do things better is fun. Learning from legends is wise.
+Thanks to Robert Tucker - [@robertwtucker] for providing the outline of this README file. Aspiring to do things better is fun. Learning from legends is wise.
