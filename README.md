@@ -1,8 +1,8 @@
 # Evolve PowerShell Demo
 
-![version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Frobertwtucker%2Ftransformd-demo-connector%2Fmaster%2Fpackage.json&query=%24.version&label=version)
-![open issues](https://img.shields.io/github/issues-raw/robertwtucker/transformd-demo-connector)
-![license](https://img.shields.io/github/license/robertwtucker/transformd-demo-connector)
+![version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FSacha00Z%2FEvolve-Demo-Scripts%2Fmaster%2Fpackage.json&query=%24.version&label=version)
+![open issues](https://img.shields.io/github/issues-raw/Sacha00Z/Evolve-Demo-Scripts)
+![license](https://img.shields.io/github/license/Sacha00Z/Evolve-Demo-Scripts)
 
 ## Overview
 
@@ -26,7 +26,7 @@ installed:
 No build is required. Just clone this repository, configure "settings.json", and run the scripts:
 
 ```bash
-git clone https://github.com/Sacha00Z/evolve-tbc.git
+git clone https://github.com/Sacha00Z/Evolve-Demo-Scripts.git
 ```
 
 In oder for the scripts to execute, you will need to either create or update a settings file, and place it in the same directory as these scripts:
@@ -43,7 +43,7 @@ Copy this and paste into `settings.json` file, if you don't already have one (sh
   },
   "env": {
     "_": "To be obtained from Quadient Cloud Administration UI. Do not terminate with a '/' character",
-    "baseUrl": "https://presalesapacstaging.quadientcloud.com.au",
+    "baseUrl": "https://yourcompany.quadientcloud.com.au",
     "bearerToken": "ABCdef123/f8NoYouCantHaveMinealkjdhflkjsahdf"
   },
   "blob": {
@@ -81,12 +81,12 @@ This file has the following structure:
 
 ## History
 
-See [CHANGELOG.md](https://github.com/Sacha00Z/project-tbc/blob/master/CHANGELOG.md)
+See [CHANGELOG.md](https://github.com/Sacha00Z/Evolve-Demo-Scripts/blob/master/CHANGELOG.md)
 for more information.
 
 ## Roadmap
 
-See the [open issues](https://github.com/Sacha00Z/project-tbc/issues)
+See the [open issues](https://github.com/Sacha00Z/Evolve-Demo-Scripts/issues)
 for a list of proposed features (and known issues).
 
 ## Contributing
@@ -110,6 +110,6 @@ See `LICENSE` for more information.
 
 Sacha Trube - [@Sacha00Z](https://twitter.com/Sacha00Z)
 
-Project Link: [https://github.com/Sacha00Z/projectTBC](https://github.com/Sacha00Z/projectTBC)
+Project Link: [https://github.com/Sacha00Z/Evolve-Demo-Scripts](https://github.com/Sacha00Z/Evolve-Demo-Scripts)
 
 Thanks to Robert Tucker - @robertwtucker for providing the outline of this README file. Aspiring to do things better is fun. Learning from legends is wise.
