@@ -1,5 +1,5 @@
 <#
-This script calls the Evolve Generate Create Working Folder API.
+This script calls the Azure Blob Storage API to upload a file.
 You need to have a valid settings file and data file for this script to work
 This script is tested in PowerShell Core 7
 #>
