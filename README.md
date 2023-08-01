@@ -93,10 +93,28 @@ Creates a Working Folder in Azure Blob Storage, and registers it with the Genera
 
 When this script executes the http request, it saves the name of the working folder to the settings file, so that subsequent scripts can *use* the folder for file storage.
 
-## History
+### `Call-PutDataFile.ps1`
 
-See [CHANGELOG.md](https://github.com/Sacha00Z/Evolve-Demo-Scripts/blob/master/CHANGELOG.md)
-for more information.
+Stores a data file in the working folder (as created by `Call-CreateWorkingFolder.ps1`). This script will fail if you do not create a working folder first.
+
+You can use any input file you like. Just save it in the data folder of this project and update the settings file so that `inputFilename` points to your file. Also make sure that the format of that file matches your template's expectations.
+
+### `Call-StartBatchJob.ps1`
+
+Starts a batch job and monitors the status of that batch job.
+
+You can modify this script to either launch the GUI Job Status, or display the status in the terminal (or both).
+
+Note that this script will fail, if you have not PUT a data file into a working folder within the last 24 hours.
+
+This script requires:
+
+- A pipeline, configured in your Evolve environment.
+  - Your pipeline should expect to receive 3 parameters (`templatePath` in Content Manager, `dataInputFilename` in Azure Blob Storage, `outputFileName` to produce).
+- A template, configured in Content Author
+- Successful execution of `Call-PutDataFile.ps1` to upload the data file.
+
+Ensure that you have configured the `remote` section of the `settings.json` file, to point to your pipeline and template.
 
 ## Roadmap
 

@@ -23,7 +23,7 @@ $body.Add("description", "Evolve Demo Scripts Request")       # User preference:
 $body.Add("workingFolderId", $conf.var.latestWorkingFolderId)
 $body.Add("expiration", (Get-Date).AddDays(1).ToString("o"))  # Data Retention Policy: Keep it until tomorrow.
 $variables = @(
-    [pscustomobject]@{codeName = 'templatePath'; value = $conf.remote.template }
+    [pscustomobject]@{codeName = 'templatePath'; value = $conf.remote.templatePath }
     [pscustomobject]@{codeName = 'dataInputFilename'; value = $conf.local.inputFilename }
     [pscustomobject]@{codeName = 'outputFileName'; value = $conf.local.outputFilename }
 )
