@@ -23,4 +23,4 @@ $response = Invoke-WebRequest $uri -Method 'PUT' -Headers $headers -Body $body
 Write-Output $response | Format-List -Property StatusCode, StatusDescription
 
 # Pause
-Read-Host "Press Enter to continue..."
+#Read-Host "Press Enter to continue..."

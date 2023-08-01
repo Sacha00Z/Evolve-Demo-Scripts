@@ -17,7 +17,7 @@ $headers.Add("Accept", "application/json")
 $headers.Add("Authorization", "Bearer " + $conf.env.bearerToken)
 
 $body = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
-$body.Add("name", $conf.local.workingFolderName)               # User preference: settings.json
+$body.Add("name", $conf.remote.workingFolderName)               # User preference: settings.json
 $body.Add("expiration", (Get-Date).AddDays(1).ToString("o"))  # Data Retention Policy: Keep it until tomorrow.
 
 ## Execute http request
@@ -30,4 +30,4 @@ $conf | ConvertTo-Json | set-content $configFile
 
 
 # Pause
-Read-Host "Press Enter to continue..."
+#Read-Host "Press Enter to continue..."

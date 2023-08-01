@@ -20,6 +20,7 @@ $headers.Add("Authorization", "Bearer " + $conf.env.bearerToken)
 $body = New-Object "System.Collections.Generic.Dictionary[[String],[PSObject]]"
 $body.Add("pipelineName", $conf.remote.pipelineName)            # User preference: settings.json
 $body.Add("description", "Evolve Demo Scripts Request")       # User preference: settings.json
+$body.Add("workingFolderId", $conf.var.latestWorkingFolderId)
 $body.Add("expiration", (Get-Date).AddDays(1).ToString("o"))  # Data Retention Policy: Keep it until tomorrow.
 $variables = @(
     [pscustomobject]@{codeName = 'templatePath'; value = $conf.remote.template }
@@ -33,4 +34,4 @@ $response = Invoke-RestMethod $uri -Method 'POST' -Headers $headers -Body ($body
 Write-Output $response | Format-List
 
 # Pause
-Read-Host "Press Enter to continue..."
+#Read-Host "Press Enter to continue..."
