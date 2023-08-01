@@ -16,7 +16,7 @@ and the Generate service.
 
 ### Prerequisites
 
-In order to build and use the connector, the following software must be
+In order to use these scripts, the following software must be
 installed:
 
 - [Powershell Core for MultiPlatforms](https://learn.microsoft.com/en-us/powershell/)

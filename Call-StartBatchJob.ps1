@@ -1,5 +1,6 @@
 <#
 This script calls the Evolve Generate startBatchJob API.
+It then polls for the job status using the batchJobStatus API.
 You need to have a valid settings file for this script to work
 This script is tested in PowerShell Core 7
 #>
@@ -34,23 +35,23 @@ $response = Invoke-RestMethod $uri -Method 'POST' -Headers $headers -Body ($body
 Write-Output $response | Format-List
 
 ## Launch the GUI - deep link to the job
-#Start-Process ($conf.env.baseUrl + "/generate/#/jobs/view/" + $response.batchJobId + "//")
+Start-Process ($conf.env.baseUrl + "/generate/#/jobs/view/" + $response.batchJobId + "//")
+
 
 ## Prepare the status service call
 $statusUri = $conf.env.baseUrl + $conf.app.generate + "/batchJobStatus"
 $statusBody = New-Object "System.Collections.Generic.Dictionary[[String],[PSObject]]"
 $statusBody.Add("batchJobId", $response.batchJobId)
 
-$statusResponse = Invoke-RestMethod $statusUri -Method 'POST' -Headers $headers -Body ($statusBody | ConvertTo-Json)
-
 ## Poll for the status of the job
 while ($statusResponse.batchJob.state -ne "Finished") {
     $statusResponse = Invoke-RestMethod $statusUri -Method 'POST' -Headers $headers -Body ($statusBody | ConvertTo-Json)
     $i = $statusResponse.batchJob.progress
     Write-Progress -Activity "Progress" -Status "$i% Complete:" -PercentComplete $i
-    Start-Sleep -Milliseconds 5
+    Start-Sleep -Milliseconds 2
 }
 
+Start-Sleep -Milliseconds 100
 Write-Progress -Activity "Progress" -Status "100% Complete:" -Completed
 Write-Output "Processing Complete."
 
