@@ -9,17 +9,17 @@ $configFile = ".\settings.json"
 $conf = Get-Content $configFile | ConvertFrom-Json
 
 ## initialise http request
-$uri = $conf.blob.sasUriRoot + "/batch/" + $conf.var.latestWorkingFolderId + "/" + $conf.pref.inputFilename + $conf.blob.sasUriAuth
+$uri = $conf.blob.sasUriRoot + "/batch/" + $conf.var.latestWorkingFolderId + "/" + $conf.local.inputFilename + $conf.blob.sasUriAuth
 
 $headers = New-Object "System.Collections.Generic.Dictionary[[String],[String]]"
 $headers.Add("Content-Type", "application/json")
 $headers.Add("Accept", "application/json")
 $headers.Add("x-ms-blob-type", "BlockBlob")
 
-$body = Get-Content ("./data/" + $conf.pref.inputFileName)
+$body = Get-Content ("./data/" + $conf.local.inputFileName)
 
 ## Execute http request
-$response = Invoke-WebRequest $uri -Method 'PUT' -Headers $headers -Body ($body | ConvertTo-Json)
+$response = Invoke-WebRequest $uri -Method 'PUT' -Headers $headers -Body $body
 Write-Output $response | Format-List -Property StatusCode, StatusDescription
 
 # Pause
