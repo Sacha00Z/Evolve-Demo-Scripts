@@ -29,47 +29,15 @@ No build is required. Just clone this repository, configure "settings.json", and
 git clone https://github.com/Sacha00Z/Evolve-Demo-Scripts.git
 ```
 
-In oder for the scripts to execute, you will need to either create or update a settings file, and place it in the same directory as these scripts:
-
-Copy this and paste into `settings.json` file, if you don't already have one (shame on me):
-
-```json
-{
-  "pref": {
-    "_": "local settings",
-    "inputFilename": "BatchInput.json",
-    "outputFilename": "BatchSpoolFile.pdf",
-    "workingFolderName": "myWorkingFolder"
-  },
-  "env": {
-    "_": "To be obtained from Quadient Cloud Administration UI. Do not terminate with a '/' character",
-    "baseUrl": "https://yourcompany.quadientcloud.com.au",
-    "bearerToken": "ABCdef123/f8NoYouCantHaveMinealkjdhflkjsahdf"
-  },
-  "blob": {
-    "_": "To be obtained from Generate Administration UI. Split the string into two, before the '?' character",
-    "sasUriRoot": "https://quadientprodau732hjj.blob.core.windows.net/12345678-user-container",
-    "sasUriAuth": "?sv=2020-08-04&si=sas-user-NoYouCantHaveMine-12345678&sr=c&sig=ABCdefHIJklmNoYouCantHaveMine847kaljdgf"
-  },
-  "app": {
-    "_": "Do not edit, unless cloud application specs change",
-    "authoring": "/authoring/api/system/v1",
-    "frontOffice": "/frontoffice/api/system/v2",
-    "generate": "/production/v3",
-    "digitalDelivery": "/api/query/Messenger"
-  },
-  "var": {
-    "_": "These values get updated by scripts",
-    "latestWorkingFolderId": "",
-    "latestBatchId": "",
-    "expiration": ""
-  }
-}
-```
+In oder for the scripts to execute, you will need to update the `settings.json` file.
 
 This file has the following structure:
 
-- **pref**: User Preferences. Update as required, but probably avoid spaces and special characters.
+- **local**: Local filenames. Update to match your input file (found in the `data` folder) and the name of the output file.
+- **remote**: Evolve Generate Pipeline Settings
+  - **workingFolderName**: Can be any string (best to avoid spaces and special characters) - should either identify you (as a developer) or the project (eg Q4-statements)
+  - **pipelineName**: You need to build a pipeline in Evolve which executes the steps you need (EG: Print PDF). This setting should point to your named pipeline.
+  - **templatePath**: `icm://` path to your template. Obtain from Content Author &rarr; Content Manager &rarr; Your Template &rarr; View Versions &rarr; Object Path
 - **env**: Environment settings.
   - **baseUrl**: Url of your *Quadient Cloud* environment. Please ensure that the "baseUrl" ends with `.com.au`, `.com` or `.eu`. No trailing "`/`" character.
   - **bearerToken**: Obtain this from your *Quadient Cloud* User Interface (*Quadient Cloud Settings* App, Administration, API Keys)
