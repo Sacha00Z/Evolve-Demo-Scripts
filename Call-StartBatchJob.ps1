@@ -48,10 +48,10 @@ while ($statusResponse.batchJob.state -ne "Finished") {
     $statusResponse = Invoke-RestMethod $statusUri -Method 'POST' -Headers $headers -Body ($statusBody | ConvertTo-Json)
     $i = $statusResponse.batchJob.progress
     Write-Progress -Activity "Progress" -Status "$i% Complete:" -PercentComplete $i
-    Start-Sleep -Milliseconds 2
+    Start-Sleep -Milliseconds 400
 }
 
-Start-Sleep -Milliseconds 100
+Start-Sleep -Milliseconds 500
 Write-Progress -Activity "Progress" -Status "100% Complete:" -Completed
 Write-Output "Processing Complete."
 
