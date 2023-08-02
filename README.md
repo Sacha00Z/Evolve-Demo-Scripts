@@ -1,6 +1,6 @@
 # Evolve PowerShell Demo
 
-![version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FSacha00Z%2FEvolve-Demo-Scripts%2Fmaster%2Fpackage.json&query=%24.version&label=version)
+![version)](https://img.shields.io/github/v/tag/Sacha00z/Evolve-Demo-Scripts?label=version)
 ![open issues](https://img.shields.io/github/issues-raw/Sacha00Z/Evolve-Demo-Scripts)
 ![license](https://img.shields.io/github/license/Sacha00Z/Evolve-Demo-Scripts)
 
