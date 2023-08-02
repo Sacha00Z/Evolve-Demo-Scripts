@@ -27,4 +27,4 @@ Write-Output $response | Format-List
 
 
 # Pause
-Read-Host "Press Enter to continue..."
+#Read-Host "Press Enter to continue..."
