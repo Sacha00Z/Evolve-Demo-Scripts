@@ -1,0 +1,36 @@
+{
+  "local": {
+    "_": "local settings",
+    "folderLocation": "C:\\Quadient\\Demos\\Evolve Demo Scripts\\data",
+    "inputFilename": "BatchInputFileExample.json",
+    "outputFilename": "BatchSpoolFile.pdf"
+  },
+  "remote": {
+    "_": "Evolve Generate Pipeline variables",
+    "workingFolderName": "xyzworkingfolder",
+    "pipelineName": "XyZ Generic Batch",
+    "templatePath": "icm:S:Production:S:UserResource//Interactive/StandardPackage/BaseTemplates/StandardDemo/Celeste/Statement JSON.wfd"
+  },
+  "env": {
+    "_": "To be obtained from Quadient Cloud Administration UI. Do not terminate with a '/' character",
+    "baseUrl": "https://yourcompany.quadientcloud.com.tld",
+    "bearerToken": "TPSvNfUpJGnD6UmmNoYouCantHaveMineXptZ/f7CZjw"
+  },
+  "blob": {
+    "_": "To be obtained from Generate Administration UI. Split the string into two, before the '?' character",
+    "sasUriRoot": "https://quadientprodau3e05f987.blob.core.windows.net/122345679-user-container",
+    "sasUriAuth": "?sv=2020-08-04&si=sas-user-XyZ-YourKey-1687654321&sr=c&sig=lzljse%2JQiK4UmmNoYouCantHaveMine6WhLBNbyuEBf5ZsU%3X"
+  },
+  "app": {
+    "_": "Do not edit, unless cloud application specs change",
+    "authoring": "/authoring/api/system/v1",
+    "frontOffice": "/frontoffice/api/system/v2",
+    "generate": "/production/v3",
+    "digitalDelivery": "/api/query/Messenger"
+  },
+  "var": {
+    "_": "These values get updated by scripts",
+    "latestWorkingFolderId": "2023-08-02-xyzworkingfolder-688185266",
+    "latestBatchId": ""
+  }
+}
