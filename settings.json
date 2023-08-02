@@ -1,7 +1,7 @@
 {
   "local": {
     "_": "local settings. Relative to the data folder of this project.",
-    "inputFilename": "BatchInputFileCeleste.json",
+    "inputFilename": "BatchInputFileExample.json",
     "outputFilename": "BatchSpoolFile.pdf"
   },
   "remote": {
