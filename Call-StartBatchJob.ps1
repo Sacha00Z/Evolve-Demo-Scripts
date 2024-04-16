@@ -35,8 +35,7 @@ $response = Invoke-RestMethod $uri -Method 'POST' -Headers $headers -Body ($body
 Write-Output $response | Format-List
 
 ## Launch the GUI - deep link to the job
-Start-Process ($conf.env.baseUrl + "/generate/#/jobs/view/" + $response.batchJobId + "//")
-
+Start-Process ($conf.env.baseUrl + "/generate/#/jobs/batch/view/" + $response.batchJobId + "//")
 
 ## Prepare the status service call
 $statusUri = $conf.env.baseUrl + $conf.app.generate + "/batchJobStatus"
