@@ -17,10 +17,16 @@ $headers.Add("Accept", "application/json")
 $headers.Add("x-ms-blob-type", "BlockBlob")
 
 ## Execute http request
-$response = Invoke-WebRequest $uri -Method 'GET' -Headers $headers -OutFile ($ENV:Temp + "\" + $conf.local.outputFilename)
+$tempPath = Join-Path ([System.IO.Path]::GetTempPath()) $conf.local.outputFilename
+$response = Invoke-WebRequest $uri -Method 'GET' -Headers $headers -OutFile $tempPath
 Write-Output $response | Format-List -Property StatusCode, StatusDescription
 
-Start-Process ($ENV:Temp + "\" + $conf.local.outputFilename)
+if ($IsWindows) {
+    Start-Process $tempPath
+}
+else {
+    & open $tempPath
+}
 
 # Pause
 #Read-Host "Press Enter to continue..."
